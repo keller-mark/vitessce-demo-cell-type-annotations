@@ -1,12 +1,16 @@
 name: hubmap-cell-sets
 channels:
   - conda-forge
-  - bioconda
 dependencies:
   - python>=3.7
   - numpy
   - scipy
   - pandas
+  - networkx
   - snakemake
   - requests
   - nb_conda
+  - pyyaml
+  - pip
+  - pip:
+    - obonet
