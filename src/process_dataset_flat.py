@@ -11,19 +11,7 @@ if __name__ == "__main__":
     df = pd.read_csv(snakemake.input[0])
     df = df.loc[df[COLUMNS.DATASET_ID.value] == snakemake.wildcards[COLUMNS.DATASET_ID.value]]
     
-    
-    tree = {
-        "datatype": "cell",
-        "version": "0.1.2",
-        "tree": [
-            {
-                "name": "Cell Type Annotations",
-                "children": [
-                    
-                ]
-            }
-        ]
-    }
+    tree = init_tree()
 
     for cell_type, cell_type_df in df.groupby(COLUMNS.ANNOTATION.value):
         tree["tree"][0]["children"].append({

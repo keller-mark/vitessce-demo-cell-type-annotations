@@ -13,8 +13,10 @@ rule all:
     input:
         [ join(PROC_DIR, "{}", "{}.flat.json").format(instance, dataset_id)
             for instance, instance_datasets in config.items()
-            for dataset_id in instance_datasets ]
-
+            for dataset_id in instance_datasets ],
+        [ join(PROC_DIR, "{}", "{}.tree.json").format(instance, dataset_id)
+            for instance, instance_datasets in config.items()
+            for dataset_id in instance_datasets ],
 
 rule process_dataset_flat:
     input:

@@ -14,3 +14,17 @@ def load_co():
     name_to_id = {data['name']: id_ for id_, data in graph.nodes(data=True) if 'name' in data}
 
     return graph, id_to_name, name_to_id
+
+def init_tree():
+    return {
+        "datatype": "cell",
+        "version": "0.1.2",
+        "tree": [
+            {
+                "name": "Cell Type Annotations",
+                "children": [
+                    
+                ]
+            }
+        ]
+    }
