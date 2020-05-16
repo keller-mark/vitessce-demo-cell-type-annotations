@@ -9,10 +9,7 @@ if __name__ == "__main__":
     df = df.loc[df[COLUMNS.DATASET_ID.value] == snakemake.wildcards[COLUMNS.DATASET_ID.value]]
 
     annotation_values = df[COLUMNS.ANNOTATION.value].unique().tolist()
-
     df["annotation_index"] = df[COLUMNS.ANNOTATION.value].apply(lambda val: annotation_values.index(val))
-
-
     
     factors = {
         "Cell Type Annotations": {
