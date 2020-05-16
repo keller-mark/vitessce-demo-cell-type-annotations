@@ -14,7 +14,8 @@ rule all:
         [ join(PROC_DIR, "{}", "{}.flat.json").format(instance, dataset_id)
             for instance, instance_datasets in config.items()
             for dataset_id in instance_datasets ],
-        [ join(PROC_DIR, "{}", "{}.tree.json").format(instance, dataset_id)
+        # Files for the current set manager
+        [ join(PROC_DIR, "{}", "{}.factors.json").format(instance, dataset_id)
             for instance, instance_datasets in config.items()
             for dataset_id in instance_datasets ],
 
@@ -33,3 +34,11 @@ rule process_dataset_tree:
         join(PROC_DIR, "{instance}", "{dataset_id}.tree.json")
     script:
         join(SRC_DIR, "process_dataset_tree.py")
+
+rule process_dataset_factors:
+    input:
+        join(RAW_DIR, "{instance}.csv")
+    output:
+        join(PROC_DIR, "{instance}", "{dataset_id}.factors.json")
+    script:
+        join(SRC_DIR, "process_dataset_factors.py")
