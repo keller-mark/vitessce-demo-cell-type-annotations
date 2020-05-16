@@ -1,11 +1,8 @@
 import pandas as pd
 import numpy as np
 import json
-import networkx
-import obonet
 
 from constants import *
-from utils import *
 
 if __name__ == "__main__":
     df = pd.read_csv(snakemake.input[0])
