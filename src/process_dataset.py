@@ -19,7 +19,7 @@ def generate_json_files(
     df = cells_df.join(annotation_df)
     df.index = df.index.rename(COLUMNS.CELL_ID.value)
 
-    df['leiden'] = df['leiden'].apply(lambda i: f"Cluster {i}")
+    df['leiden'] = df['leiden'].apply(lambda i: f"Cluster {str(i).zfill(2)}")
     df[COLUMNS.ANNOTATION.value] = df[COLUMNS.ANNOTATION.value].astype(str)
 
     cells_df_items = df.T.to_dict().items()
