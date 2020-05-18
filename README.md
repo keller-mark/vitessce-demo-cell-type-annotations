@@ -21,6 +21,14 @@ conda activate hubmap-cell-sets
 snakemake --cores 1
 ```
 
+## Serve
+
+```sh
+yarn global add serve
+serve -l 9090
+```
+
+
 
 ## EBI Cell Ontology API
 

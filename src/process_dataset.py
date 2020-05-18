@@ -18,7 +18,6 @@ def generate_json_files(
 
     df = cells_df.join(annotation_df)
     df.index = df.index.rename(COLUMNS.CELL_ID.value)
-    df = df.reset_index()
 
     df['leiden'] = df['leiden'].apply(lambda i: f"Cluster {i}")
     df[COLUMNS.ANNOTATION.value] = df[COLUMNS.ANNOTATION.value].astype(str)
@@ -57,6 +56,7 @@ def generate_json_files(
     
 
     # Generate .flat.cell_sets.json
+    df = df.reset_index()
     tree = init_tree()
 
     leiden_clusters_children = []
