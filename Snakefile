@@ -5,28 +5,29 @@ configfile: 'config.yml'
 SRC_DIR = "src"
 DATA_DIR = "data"
 RAW_DIR = join(DATA_DIR, "raw")
-PROC_DIR = join(DATA_DIR, "processed")
+PROCESSED_DIR = join(DATA_DIR, "processed")
 
 GLOBUS_IDS = config['annotations_spleen_0510']
 
-CELL_ANNOTATIONS_URL = 'https://vitessce-data.s3.amazonaws.com/source-data/annotations_spleen_0510/annotations_spleen_0510.csv'
-CELLS_URL = 'https://giygas.compbio.cs.cmu.edu/uf-processed.tar.xz'
+CELL_ANNOTATIONS_URL = "https://vitessce-data.s3.amazonaws.com/source-data/annotations_spleen_0510/annotations_spleen_0510.csv"
+CELLS_URL = "https://giygas.compbio.cs.cmu.edu/uf-processed.tar.xz"
+CL_OBO_URL = "https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.obo"
 
 rule all:
     input:
-        expand(join(PROC_DIR, "{globus_id}.cells.json"), globus_id=GLOBUS_IDS),
-        expand(join(PROC_DIR, "{globus_id}.factors.json"), globus_id=GLOBUS_IDS),
-        expand(join(PROC_DIR, "{globus_id}.flat.cell_sets.json"), globus_id=GLOBUS_IDS),
-        #expand(join(PROC_DIR, "{globus_id}.hierarchical.cell_sets.json"), globus_id=GLOBUS_IDS),
+        expand(join(PROCESSED_DIR, "{globus_id}.cells.json"), globus_id=GLOBUS_IDS),
+        expand(join(PROCESSED_DIR, "{globus_id}.factors.json"), globus_id=GLOBUS_IDS),
+        expand(join(PROCESSED_DIR, "{globus_id}.flat.cell_sets.json"), globus_id=GLOBUS_IDS),
+        #expand(join(PROCESSED_DIR, "{globus_id}.hierarchical.cell_sets.json"), globus_id=GLOBUS_IDS),
 
 rule process_dataset:
     input:
         cells_arrow=join(RAW_DIR, "uf_processed", "{globus_id}", "cluster_marker_genes.arrow"),
         annotations_csv=join(RAW_DIR, "annotations_spleen_0510", "{globus_id}.csv")
     output:
-        cells_json=join(PROC_DIR, "{globus_id}.cells.json"),
-        factors_json=join(PROC_DIR, "{globus_id}.factors.json"),
-        flat_cell_sets_json=join(PROC_DIR, "{globus_id}.flat.cell_sets.json")
+        cells_json=join(PROCESSED_DIR, "{globus_id}.cells.json"),
+        factors_json=join(PROCESSED_DIR, "{globus_id}.factors.json"),
+        flat_cell_sets_json=join(PROCESSED_DIR, "{globus_id}.flat.cell_sets.json")
     params:
         script=join(SRC_DIR, "process_dataset.py")
     shell:
@@ -90,7 +91,9 @@ rule untar_cells_data:
         )
     shell:
         '''
-        tar -xvzf {input} -C {RAW_DIR}
+        tar -xvzf {input} -C {RAW_DIR} \
+        && rm -r {RAW_DIR}/uf_processed \
+        && mv {RAW_DIR}/uf-processed {RAW_DIR}/uf_processed
         '''
 
 # Download TAR file containing UMAP clustering data.

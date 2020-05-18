@@ -3,9 +3,8 @@ import obonet
 
 from constants import *
 
-
-def load_co():
-    graph = obonet.read_obo(CL_OBO_URL)
+def load_cl_obo_graph(cl_obo_url):
+    graph = obonet.read_obo(cl_obo_url)
     
     # make sure there are no cycles
     assert(networkx.is_directed_acyclic_graph(graph))
@@ -20,11 +19,6 @@ def init_tree():
         "datatype": "cell",
         "version": "0.1.2",
         "tree": [
-            {
-                "name": "Cell Type Annotations",
-                "children": [
-                    
-                ]
-            }
+            
         ]
     }

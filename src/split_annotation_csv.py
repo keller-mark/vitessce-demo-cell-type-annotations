@@ -1,4 +1,5 @@
 import argparse
+
 import pandas as pd
 
 from constants import *
@@ -6,6 +7,7 @@ from constants import *
 def split_annotation_csv(input_file, output_file, globus_id):
     df = pd.read_csv(input_file)
     df = df.loc[df[COLUMNS.GLOBUS_ID.value] == globus_id]
+    df = df[[COLUMNS.CELL_ID.value, COLUMNS.ANNOTATION.value, COLUMNS.PREDICTION_SCORE.value]]
     df.to_csv(output_file, index=False)
 
 if __name__ == '__main__':

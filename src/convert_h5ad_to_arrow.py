@@ -1,12 +1,8 @@
 import argparse
-from glob import glob
-from pathlib import Path
-from os import mkdir, environ
-import json
 
 from anndata import read_h5ad
 import pyarrow as pa
-from pandas import DataFrame
+import pandas as pd
 
 
 def h5ad_to_arrow(h5ad_file, arrow_file):
@@ -15,7 +11,7 @@ def h5ad_to_arrow(h5ad_file, arrow_file):
     leiden = ann_data.obs['leiden'].to_numpy().astype('uint8')
     index = ann_data.obs.index
 
-    df = DataFrame(
+    df = pd.DataFrame(
         data={'umap_x': umap[0], 'umap_y': umap[1], 'leiden': leiden},
         index=index
     )
