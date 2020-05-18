@@ -20,3 +20,5 @@ if __name__ == "__main__":
     
     with open(snakemake.output[0], 'w') as f:
         json.dump(factors, f)
+    
+    df[[COLUMNS.CELL_ID.value, COLUMNS.ANNOTATION.value, COLUMNS.PREDICTION_SCORE.value]].to_csv(snakemake.output[1], index=False)
