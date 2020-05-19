@@ -1,10 +1,8 @@
 import networkx
 import obonet
 
-from constants import *
-
-def load_cl_obo_graph(cl_obo_url):
-    graph = obonet.read_obo(cl_obo_url)
+def load_cl_obo_graph(cl_obo_file):
+    graph = obonet.read_obo(cl_obo_file)
     
     # make sure there are no cycles
     assert(networkx.is_directed_acyclic_graph(graph))

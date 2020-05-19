@@ -18,16 +18,18 @@ rule all:
         expand(join(PROCESSED_DIR, "{globus_id}.cells.json"), globus_id=GLOBUS_IDS),
         expand(join(PROCESSED_DIR, "{globus_id}.factors.json"), globus_id=GLOBUS_IDS),
         expand(join(PROCESSED_DIR, "{globus_id}.flat.cell_sets.json"), globus_id=GLOBUS_IDS),
-        #expand(join(PROCESSED_DIR, "{globus_id}.hierarchical.cell_sets.json"), globus_id=GLOBUS_IDS),
+        expand(join(PROCESSED_DIR, "{globus_id}.hierarchical.cell_sets.json"), globus_id=GLOBUS_IDS),
 
 rule process_dataset:
     input:
         cells_arrow=join(RAW_DIR, "uf_processed", "{globus_id}", "cluster_marker_genes.arrow"),
-        annotations_csv=join(RAW_DIR, "annotations_spleen_0510", "{globus_id}.csv")
+        annotations_csv=join(RAW_DIR, "annotations_spleen_0510", "{globus_id}.csv"),
+        cl_obo=join(RAW_DIR, "cl.obo")
     output:
         cells_json=join(PROCESSED_DIR, "{globus_id}.cells.json"),
         factors_json=join(PROCESSED_DIR, "{globus_id}.factors.json"),
-        flat_cell_sets_json=join(PROCESSED_DIR, "{globus_id}.flat.cell_sets.json")
+        flat_cell_sets_json=join(PROCESSED_DIR, "{globus_id}.flat.cell_sets.json"),
+        hierarchical_cell_sets_json=join(PROCESSED_DIR, "{globus_id}.hierarchical.cell_sets.json")
     params:
         script=join(SRC_DIR, "process_dataset.py")
     shell:
@@ -35,9 +37,11 @@ rule process_dataset:
         python {params.script} \
             -ic {input.cells_arrow} \
             -ia {input.annotations_csv} \
+            -ico {input.cl_obo} \
             -oc {output.cells_json} \
             -of {output.factors_json} \
-            -ofcs {output.flat_cell_sets_json}
+            -ofcs {output.flat_cell_sets_json} \
+            -ohcs {output.hierarchical_cell_sets_json}
         '''
 
 rule split_annotation_csv:
@@ -102,6 +106,16 @@ rule download_cells_data:
         join(RAW_DIR, "uf-processed.tar.xz")
     params:
         file_url=CELLS_URL
+    shell:
+        '''
+        curl -L -o {output} {params.file_url}
+        '''
+
+rule download_cl_obo:
+    output:
+        join(RAW_DIR, "cl.obo")
+    params:
+        file_url=CL_OBO_URL
     shell:
         '''
         curl -L -o {output} {params.file_url}
