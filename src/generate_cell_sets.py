@@ -30,7 +30,7 @@ def generate_flat_cell_sets(df):
         })
     
     tree["tree"].append({
-        "name": "Cell Type Annotations",
+        "name": "Cell Type Annotations (flat)",
         "children": cell_type_annotation_children
     })
     return tree
@@ -161,5 +161,5 @@ def generate_hierarchical_cell_sets(df, cl_obo_file):
                 "set": value
             }
 
-    tree["tree"] = [ to_tree("Cell Type Annotations", h) ]
+    tree["tree"] = [ to_tree("Cell Type Annotations (hierarchical)", h) ]
     return tree

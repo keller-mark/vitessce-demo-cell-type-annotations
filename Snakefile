@@ -17,8 +17,7 @@ rule all:
     input:
         expand(join(PROCESSED_DIR, "{globus_id}.cells.json"), globus_id=GLOBUS_IDS),
         expand(join(PROCESSED_DIR, "{globus_id}.factors.json"), globus_id=GLOBUS_IDS),
-        expand(join(PROCESSED_DIR, "{globus_id}.flat.cell_sets.json"), globus_id=GLOBUS_IDS),
-        expand(join(PROCESSED_DIR, "{globus_id}.hierarchical.cell_sets.json"), globus_id=GLOBUS_IDS),
+        expand(join(PROCESSED_DIR, "{globus_id}.cell_sets.json"), globus_id=GLOBUS_IDS),
 
 rule process_dataset:
     input:
@@ -28,8 +27,7 @@ rule process_dataset:
     output:
         cells_json=join(PROCESSED_DIR, "{globus_id}.cells.json"),
         factors_json=join(PROCESSED_DIR, "{globus_id}.factors.json"),
-        flat_cell_sets_json=join(PROCESSED_DIR, "{globus_id}.flat.cell_sets.json"),
-        hierarchical_cell_sets_json=join(PROCESSED_DIR, "{globus_id}.hierarchical.cell_sets.json")
+        cell_sets_json=join(PROCESSED_DIR, "{globus_id}.cell_sets.json")
     params:
         script=join(SRC_DIR, "process_dataset.py")
     shell:
@@ -40,8 +38,7 @@ rule process_dataset:
             -ico {input.cl_obo} \
             -oc {output.cells_json} \
             -of {output.factors_json} \
-            -ofcs {output.flat_cell_sets_json} \
-            -ohcs {output.hierarchical_cell_sets_json}
+            -ocs {output.cell_sets_json}
         '''
 
 rule split_annotation_csv:

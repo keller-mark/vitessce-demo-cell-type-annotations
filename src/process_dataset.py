@@ -10,7 +10,7 @@ from generate_cell_sets import *
 
 def generate_json_files(
     input_cells_arrow_file, input_annotations_csv_file, input_cl_obo_file,
-    output_cells_json_file, output_factors_json_file, output_flat_cell_sets_json_file, output_hierarchical_cell_sets_json_file
+    output_cells_json_file, output_factors_json_file, output_cell_sets_json_file
 ):
 
     cells_df = pa.ipc.open_file(input_cells_arrow_file).read_pandas()
@@ -59,14 +59,14 @@ def generate_json_files(
     df = df.reset_index()
     flat_cell_sets_json = generate_flat_cell_sets(df)
     
-    with open(output_flat_cell_sets_json_file, 'w') as f:
-        json.dump(flat_cell_sets_json, f)
-    
     # Generate .hierarchical.cell_sets.json
     hierarchical_cell_sets_json = generate_hierarchical_cell_sets(df, input_cl_obo_file)
+
+    cell_sets_json = flat_cell_sets_json
+    cell_sets_json["tree"].append(hierarchical_cell_sets_json["tree"][0])
     
-    with open(output_hierarchical_cell_sets_json_file, 'w') as f:
-        json.dump(hierarchical_cell_sets_json, f)
+    with open(output_cell_sets_json_file, 'w') as f:
+        json.dump(cell_sets_json, f)
     
 
 if __name__ == '__main__':
@@ -94,13 +94,9 @@ if __name__ == '__main__':
         required=True,
         help='Output factors.json file'
     )
-    parser.add_argument('-ofcs', '--output_flat_cell_sets_json_file',
+    parser.add_argument('-ocs', '--output_cell_sets_json_file',
         required=True,
-        help='Output flat.cell_sets.json file'
-    )
-    parser.add_argument('-ohcs', '--output_hierarchical_cell_sets_json_file',
-        required=True,
-        help='Output hierarchical.cell_sets.json file'
+        help='Output cell_sets.json file'
     )
     args = parser.parse_args()
     generate_json_files(
@@ -109,6 +105,5 @@ if __name__ == '__main__':
         args.input_cl_obo_file,
         args.output_cells_json_file,
         args.output_factors_json_file,
-        args.output_flat_cell_sets_json_file,
-        args.output_hierarchical_cell_sets_json_file
+        args.output_cell_sets_json_file
     )
