@@ -2,17 +2,23 @@ from os.path import join
 
 configfile: 'config.yml'
 
+assert('annotations_spleen_0510' in config)
+
+# Directory / file constants
 SRC_DIR = "src"
 DATA_DIR = "data"
 RAW_DIR = join(DATA_DIR, "raw")
 PROCESSED_DIR = join(DATA_DIR, "processed")
 
-GLOBUS_IDS = config['annotations_spleen_0510']
-
+# URL constants
 CELL_ANNOTATIONS_URL = "https://vitessce-data.s3.amazonaws.com/source-data/annotations_spleen_0510/annotations_spleen_0510.csv"
 CELLS_URL = "https://giygas.compbio.cs.cmu.edu/uf-processed.tar.xz"
 CL_OBO_URL = "https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.obo"
 
+# Datasets
+GLOBUS_IDS = config['annotations_spleen_0510']
+
+# Rules
 rule all:
     input:
         expand(join(PROCESSED_DIR, "{globus_id}.cells.json"), globus_id=GLOBUS_IDS),
@@ -108,6 +114,7 @@ rule download_cells_data:
         curl -L -o {output} {params.file_url}
         '''
 
+# Download OBO file containing cell type ontology.
 rule download_cl_obo:
     output:
         join(RAW_DIR, "cl.obo")

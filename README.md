@@ -12,23 +12,14 @@ columns:
 
 ```sh
 conda env create -f environment.yml
-conda activate hubmap-cell-sets
+conda activate cell-type-annotation-for-vitessce
 ```
 
 ## Run
 
 ```sh
-snakemake --cores 1
+snakemake --cores 2
 ```
-
-## Serve
-
-```sh
-yarn global add serve
-serve -l 9090
-```
-
-
 
 ## EBI Cell Ontology API
 

@@ -1,18 +1,17 @@
-name: hubmap-cell-sets
+name: cell-type-annotation-for-vitessce
 channels:
   - conda-forge
+  - bioconda
 dependencies:
   - python>=3.7
   - numpy
-  - scipy
   - pandas
-  - networkx
-  - snakemake
-  - nb_conda
+  - scipy==1.4.1
+  - networkx==2.4
+  - snakemake==5.17.0
   - anndata==0.7.1
   - pyarrow==0.15.1
   - h5py==2.10.0
-  - pyyaml
   - pip
   - pip:
-    - obonet
+    - obonet==0.2.5
