@@ -1,0 +1,164 @@
+B cell has 5 paths up to CL:0000000 (cell):
+['B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+
+
+CD14-positive monocyte has 12 paths up to CL:0000000 (cell):
+['CD14-positive monocyte', 'monocyte', 'myeloid leukocyte', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'myeloid leukocyte', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'myeloid leukocyte', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'myeloid leukocyte', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'myeloid leukocyte', 'myeloid cell', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'myeloid leukocyte', 'myeloid cell', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['CD14-positive monocyte', 'monocyte', 'precursor cell', 'native cell', 'cell']
+
+
+CD141-positive myeloid dendritic cell has 24 paths up to CL:0000000 (cell):
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'myeloid cell', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'myeloid cell', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'plasmacytoid dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'plasmacytoid dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'plasmacytoid dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'plasmacytoid dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'plasmacytoid dendritic cell', 'dendritic cell', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'plasmacytoid dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'plasmacytoid dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'plasmacytoid dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD141-positive myeloid dendritic cell', 'plasmacytoid dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+
+
+CD1c-positive myeloid dendritic cell has 15 paths up to CL:0000000 (cell):
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'myeloid cell', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'myeloid leukocyte', 'myeloid cell', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'professional antigen presenting cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['CD1c-positive myeloid dendritic cell', 'myeloid dendritic cell', 'conventional dendritic cell', 'dendritic cell', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+
+
+alpha-beta T cell has 5 paths up to CL:0000000 (cell):
+['alpha-beta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['alpha-beta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['alpha-beta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['alpha-beta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['alpha-beta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+
+
+erythroblast has 3 paths up to CL:0000000 (cell):
+['erythroblast', 'erythroid lineage cell', 'myeloid cell', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['erythroblast', 'erythroid lineage cell', 'myeloid cell', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['erythroblast', 'precursor cell', 'native cell', 'cell']
+
+
+gamma-delta T cell has 5 paths up to CL:0000000 (cell):
+['gamma-delta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['gamma-delta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['gamma-delta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['gamma-delta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['gamma-delta T cell', 'T cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+
+
+hematopoietic stem cell has 4 paths up to CL:0000000 (cell):
+['hematopoietic stem cell', 'somatic stem cell', 'stem cell', 'precursor cell', 'native cell', 'cell']
+['hematopoietic stem cell', 'somatic stem cell', 'somatic cell', 'native cell', 'cell']
+['hematopoietic stem cell', 'hematopoietic precursor cell', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['hematopoietic stem cell', 'hematopoietic precursor cell', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+
+
+natural killer cell has 5 paths up to CL:0000000 (cell):
+['natural killer cell', 'group 1 innate lymphoid cell', 'innate lymphoid cell', 'lymphocyte', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['natural killer cell', 'group 1 innate lymphoid cell', 'innate lymphoid cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['natural killer cell', 'group 1 innate lymphoid cell', 'innate lymphoid cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['natural killer cell', 'group 1 innate lymphoid cell', 'innate lymphoid cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['natural killer cell', 'group 1 innate lymphoid cell', 'innate lymphoid cell', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+
+
+plasma cell has 5 paths up to CL:0000000 (cell):
+['plasma cell', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['plasma cell', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['plasma cell', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['plasma cell', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['plasma cell', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+
+
+plasmablast has 19 paths up to CL:0000000 (cell):
+['plasmablast', 'mature B cell', 'professional antigen presenting cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'professional antigen presenting cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'B cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'lymphocyte of B lineage, CD19-positive', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'lymphocyte of B lineage, CD19-positive', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'lymphocyte of B lineage, CD19-positive', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'lymphocyte of B lineage, CD19-positive', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['plasmablast', 'mature B cell', 'B cell, CD19-positive', 'lymphocyte of B lineage, CD19-positive', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['plasmablast', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'single nucleate cell', 'nucleate cell', 'native cell', 'cell']
+['plasmablast', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['plasmablast', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['plasmablast', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['plasmablast', 'antibody secreting cell', 'lymphocyte of B lineage', 'lymphocyte', 'mononuclear cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+
+
+splenic endothelial cell has 3 paths up to CL:0000000 (cell):
+['splenic endothelial cell', 'endothelial cell', 'lining cell', 'barrier cell', 'native cell', 'cell']
+['splenic endothelial cell', 'endothelial cell', 'meso-epithelial cell', 'epithelial cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['splenic endothelial cell', 'endothelial cell', 'meso-epithelial cell', 'somatic cell', 'native cell', 'cell']
+
+
+splenic fibroblast has 2 paths up to CL:0000000 (cell):
+['splenic fibroblast', 'fibroblast', 'connective tissue cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['splenic fibroblast', 'fibroblast', 'connective tissue cell', 'somatic cell', 'native cell', 'cell']
+
+
+splenic macrophage has 17 paths up to CL:0000000 (cell):
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'professional antigen presenting cell', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'professional antigen presenting cell', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'professional antigen presenting cell', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'phagocyte', 'motile cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'phagocyte', 'stuff accumulating cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'phagocyte', 'defensive cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'myeloid leukocyte', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'myeloid leukocyte', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'myeloid leukocyte', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'myeloid leukocyte', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'myeloid leukocyte', 'myeloid cell', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['splenic macrophage', 'secondary lymphoid organ macrophage', 'tissue-resident macrophage', 'macrophage', 'myeloid leukocyte', 'myeloid cell', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['splenic macrophage', 'splenocyte', 'leukocyte', 'motile cell', 'native cell', 'cell']
+['splenic macrophage', 'splenocyte', 'leukocyte', 'hematopoietic cell', 'animal cell', 'eukaryotic cell', 'native cell', 'cell']
+['splenic macrophage', 'splenocyte', 'leukocyte', 'hematopoietic cell', 'somatic cell', 'native cell', 'cell']
+['splenic macrophage', 'splenocyte', 'leukocyte', 'nucleate cell', 'native cell', 'cell']
