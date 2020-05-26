@@ -12,7 +12,7 @@ columns:
 
 ```sh
 conda env create -f environment.yml
-conda activate cell-type-annotation-for-vitessce
+conda activate vitessce-demo-cell-type-annotations
 ```
 
 ## Run

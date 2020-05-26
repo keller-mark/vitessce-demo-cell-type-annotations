@@ -1,4 +1,4 @@
-name: cell-type-annotation-for-vitessce
+name: vitessce-demo-cell-type-annotations
 channels:
   - conda-forge
   - bioconda
