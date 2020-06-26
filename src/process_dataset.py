@@ -36,7 +36,8 @@ def generate_json_files(
             "mappings": {"UMAP": [v['umap_x'], v['umap_y']]},
             "factors": {
                 "Leiden Clustering": v['leiden'],
-                "Cell Type Annotation": v[COLUMNS.ANNOTATION.value]
+                "Cell Type Annotation": v[COLUMNS.ANNOTATION.value],
+                "Cell Type Annotation Prediction Score": str(v[COLUMNS.PREDICTION_SCORE.value])
             }
         }
         for (k, v) in cells_df_items
@@ -64,6 +65,7 @@ def generate_json_files(
     # Remove annotations with NaN prediction scores
     # TODO: use null in the JSON
     df[COLUMNS.PREDICTION_SCORE.value] = df[COLUMNS.PREDICTION_SCORE.value].fillna(0)
+    df = df.loc[df[COLUMNS.ANNOTATION.value] != "nan"]
 
     # Generate .flat.cell_sets.json
     df = df.reset_index()
