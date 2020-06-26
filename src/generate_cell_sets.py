@@ -14,8 +14,7 @@ def generate_flat_cell_sets(df):
     for cluster_name, cluster_df in df.groupby("leiden"):
         leiden_clusters_children.append({
             "name": cluster_name,
-            "set": cluster_df[COLUMNS.CELL_ID.value].unique().tolist(),
-            "itemtype": "static"
+            "set": [ [x, None] for x in cluster_df[COLUMNS.CELL_ID.value].unique().tolist() ],
         })
 
     tree["tree"].append({
@@ -32,7 +31,6 @@ def generate_flat_cell_sets(df):
         cell_type_annotation_children.append({
             "name": cell_type,
             "set": set_value,
-            "itemtype": "probabilistic"
         })
 
     tree["tree"].append({
@@ -212,7 +210,6 @@ def generate_hierarchical_cell_sets(df, cl_obo_file):
             return {
                 "name": name,
                 "set": value,
-                "itemtype": "probabilistic"
             }
 
     tree["tree"] = [
