@@ -14,7 +14,8 @@ def generate_flat_cell_sets(df):
     for cluster_name, cluster_df in df.groupby("leiden"):
         leiden_clusters_children.append({
             "name": cluster_name,
-            "set": cluster_df[COLUMNS.CELL_ID.value].unique().tolist()
+            "set": cluster_df[COLUMNS.CELL_ID.value].unique().tolist(),
+            "itemtype": "static"
         })
 
     tree["tree"].append({
@@ -24,9 +25,14 @@ def generate_flat_cell_sets(df):
 
     cell_type_annotation_children = []
     for cell_type, cell_type_df in df.groupby(COLUMNS.ANNOTATION.value):
+        set_cell_ids = cell_type_df[COLUMNS.CELL_ID.value].values.tolist()
+        set_cell_scores = cell_type_df[COLUMNS.PREDICTION_SCORE.value].values.tolist()
+        set_value = [ list(x) for x in zip(set_cell_ids, set_cell_scores) ]
+
         cell_type_annotation_children.append({
             "name": cell_type,
-            "set": cell_type_df[COLUMNS.CELL_ID.value].unique().tolist()
+            "set": set_value,
+            "itemtype": "probabilistic"
         })
 
     tree["tree"].append({
@@ -146,9 +152,13 @@ def generate_hierarchical_cell_sets(df, cl_obo_file):
         named_ancestors_reversed = list(reversed(named_ancestors))
         #print(named_ancestors_reversed)
 
+        set_cell_ids = cell_type_df[COLUMNS.CELL_ID.value].values.tolist()
+        set_cell_scores = cell_type_df[COLUMNS.PREDICTION_SCORE.value].values.tolist()
+        set_value = [ list(x) for x in zip(set_cell_ids, set_cell_scores) ]
+
         ancestors_and_sets.append((
             named_ancestors_reversed,
-            cell_type_df[COLUMNS.CELL_ID.value].unique().tolist()
+            set_value
         ))
 
     # Pop off all ancestors that are the same for all cell types.
@@ -201,7 +211,8 @@ def generate_hierarchical_cell_sets(df, cl_obo_file):
         else:
             return {
                 "name": name,
-                "set": value
+                "set": value,
+                "itemtype": "probabilistic"
             }
 
     tree["tree"] = [

@@ -61,6 +61,9 @@ def generate_json_files(
     with open(output_factors_json_file, 'w') as f:
         json.dump(factors, f, indent=1)
 
+    # Remove annotations with NaN prediction scores
+    df = df.dropna(subset=[COLUMNS.PREDICTION_SCORE.value], axis=0)
+
     # Generate .flat.cell_sets.json
     df = df.reset_index()
     flat_cell_sets = generate_flat_cell_sets(df)

@@ -27,6 +27,6 @@ def init_tree():
     # https://github.com/hubmapconsortium/vitessce/blob/d5f63aa1d08aa61f6b20f6ad6bbfba5fceb6b5ef/src/schemas/cell_sets.schema.json
     return {
         "datatype": "cell",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "tree": []
     }
