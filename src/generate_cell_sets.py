@@ -85,6 +85,26 @@ def generate_hierarchical_cell_sets(df, cl_obo_file):
                 for parent_path in parent_paths:
                     up_dag_paths.append([node_id] + parent_path)
         return up_dag_paths
+    
+    def sort_paths_up_by_preferences(paths_up):
+        PREFERENCES = [
+            ['animal cell', 'eukaryotic cell', 'native cell', 'cell'], # best match
+            ['somatic cell', 'native cell', 'cell'],
+            ['nucleate cell', 'native cell', 'cell'],
+            ['precursor cell', 'native cell', 'cell'], # worst match
+            # prefer all of the above before "functional" categories like [..., 'motile cell', 'native cell', 'cell']
+        ]
+        WORST_PREFERENCE_INDEX = len(PREFERENCES)
+        def get_first_preference_match_index_and_path_length(path_up):
+            path_preference_match_index = WORST_PREFERENCE_INDEX
+            for preference_index, preference in enumerate(PREFERENCES):
+                if path_up[-len(preference):] == preference:
+                    path_preference_match_index = preference_index
+                    break
+            # Return a tuple of the first matching preference "path ending" and the path length (to use shorter paths if multiple paths match the same top path ending).
+            return (path_preference_match_index, len(path_up))
+        return sorted(paths_up, key=get_first_preference_match_index_and_path_length)
+
 
     ancestors_and_sets = []
 
@@ -97,6 +117,7 @@ def generate_hierarchical_cell_sets(df, cl_obo_file):
                 f"ERROR: annotation '{cell_type}' does "
                 "not match any node in the cell ontology."
             ))
+            continue
 
         # Get ancestors of the cell type
         # (counterintuitive that the function is called descendants)
@@ -113,42 +134,17 @@ def generate_hierarchical_cell_sets(df, cl_obo_file):
         named_paths_up = [ [id_to_name[n_id] for n_id in path_nodes] for path_nodes in paths_up ]
         print()
         print(f"{id_to_name[node_id]} has {len(paths_up)} paths up to {CL_ROOT_ID} ({id_to_name[CL_ROOT_ID]}):")
-        for named_path_nodes in named_paths_up:
+
+        # Sort potential paths "up the hierarchy" by our preferences,
+        # to avoid "functional" parent nodes like "motile cell"
+        sorted_named_paths_up = sort_paths_up_by_preferences(named_paths_up)
+
+        for named_path_nodes in sorted_named_paths_up:
             print(named_path_nodes)
         print()
 
-        # Construct a list of ancestors, inclusive.
-        # [node_id, parent_id, grandparent_id, ...]
-        ancestors = [curr_node_id]
-
-        # Get the parents of the current node.
-        curr_node_parents = list(graph.out_edges(curr_node_id, keys=True))
-
-        check_multi_parents(curr_node_id, curr_node_parents)
-
-        # Select the first (hopefully only) parent node.
-        _, curr_parent_id, relationship = curr_node_parents[0]
-        assert(relationship == "is_a")
-
-        while curr_node_id != CL_ROOT_ID:
-            # Get the parents of the current node.
-            curr_node_parents = list(graph.out_edges(curr_node_id, keys=True))
-
-            # Warn if the current node has multiple parents.
-            check_multi_parents(curr_node_id, curr_node_parents)
-
-            # Select the first (hopefully only) parent node.
-            _, curr_parent_id, relationship = curr_node_parents[0]
-            assert(relationship == "is_a")
-            ancestors.append(curr_parent_id)
-
-            # Set the current node to its parent to
-            # prepare for the next iteration.
-            curr_node_id = curr_parent_id
-
-        named_ancestors = [id_to_name[a] for a in ancestors]
+        named_ancestors = sorted_named_paths_up[0]
         named_ancestors_reversed = list(reversed(named_ancestors))
-        #print(named_ancestors_reversed)
 
         set_cell_ids = cell_type_df[COLUMNS.CELL_ID.value].values.tolist()
         set_cell_scores = cell_type_df[COLUMNS.PREDICTION_SCORE.value].values.tolist()
