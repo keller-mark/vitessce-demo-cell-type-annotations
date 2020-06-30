@@ -14,7 +14,7 @@ def generate_flat_cell_sets(df):
     for cluster_name, cluster_df in df.groupby("leiden"):
         leiden_clusters_children.append({
             "name": cluster_name,
-            "set": [ [x, 1] for x in cluster_df[COLUMNS.CELL_ID.value].unique().tolist() ],
+            "set": [ [x, None] for x in cluster_df[COLUMNS.CELL_ID.value].unique().tolist() ],
         })
 
     tree["tree"].append({
