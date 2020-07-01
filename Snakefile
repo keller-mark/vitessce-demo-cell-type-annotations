@@ -11,8 +11,8 @@ RAW_DIR = join(DATA_DIR, "raw")
 PROCESSED_DIR = join(DATA_DIR, "processed")
 
 # URL constants
-CELL_ANNOTATIONS_URL = "https://vitessce-data.s3.amazonaws.com/source-data/annotations_spleen_0510/annotations_spleen_0510.csv"
-CELLS_URL = "https://giygas.compbio.cs.cmu.edu/uf-processed.tar.xz"
+CELL_ANNOTATIONS_URL = "https://vitessce-data.s3.amazonaws.com/source-data/satija/annotations_spleen_0510.csv"
+CELLS_URL = "https://vitessce-data.s3.amazonaws.com/source-data/satija/uf-processed.tar.xz"
 CL_OBO_URL = "https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.obo"
 
 # Datasets
@@ -27,7 +27,7 @@ rule all:
 
 rule process_dataset:
     input:
-        cells_arrow=join(RAW_DIR, "uf_processed", "{globus_id}", "cluster_marker_genes.arrow"),
+        cells_arrow=join(RAW_DIR, "uf-processed", "{globus_id}", "cluster_marker_genes.arrow"),
         annotations_csv=join(RAW_DIR, "annotations_spleen_0510", "{globus_id}.csv"),
         cl_obo=join(RAW_DIR, "cl.obo")
     output:
@@ -64,9 +64,9 @@ rule split_annotation_csv:
 
 rule convert_h5ad_to_arrow:
     input:
-        join(RAW_DIR, "uf_processed", "{globus_id}", "cluster_marker_genes.h5ad")
+        join(RAW_DIR, "uf-processed", "{globus_id}", "cluster_marker_genes.h5ad")
     output:
-        join(RAW_DIR, "uf_processed", "{globus_id}", "cluster_marker_genes.arrow")
+        join(RAW_DIR, "uf-processed", "{globus_id}", "cluster_marker_genes.arrow")
     params:
         script=join(SRC_DIR, "convert_h5ad_to_arrow.py")
     shell:
@@ -93,14 +93,12 @@ rule untar_cells_data:
         join(RAW_DIR, "uf-processed.tar.xz")
     output:
         expand(
-            join(RAW_DIR, "uf_processed", "{globus_id}", "cluster_marker_genes.h5ad"),
+            join(RAW_DIR, "uf-processed", "{globus_id}", "cluster_marker_genes.h5ad"),
             globus_id=GLOBUS_IDS
         )
     shell:
         '''
-        tar -xvzf {input} -C {RAW_DIR} \
-        && rm -r {RAW_DIR}/uf_processed \
-        && mv {RAW_DIR}/uf-processed {RAW_DIR}/uf_processed
+        tar -xvzf {input} -C {RAW_DIR}
         '''
 
 # Download TAR file containing UMAP clustering data.
